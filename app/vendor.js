@@ -6,3 +6,4 @@ require('angular-sanitize');
 require('angular-animate');
 require('angular-ui-bootstrap');
 require('ng-focus-if');
+require('angular-messages');

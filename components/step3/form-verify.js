@@ -13,7 +13,7 @@ function helloWorldController($scope) {
   'ngInject';
 
   $scope.data = 'form-verify';
-  
+  $scope.welcomePage         = false;
   console.log('directive form-verify');
 
 }
