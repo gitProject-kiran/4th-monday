@@ -1,23 +1,15 @@
 require('./travel-info.scss');
-export default function stateController($scope, $state) {
+export default function stateController($scope, $state, $http) {
     'ngInject';
 
-      // we will store all of our form data in this object
+   // we will store all of our form data in this object
     $scope.formData = {};
-    
-    /*// function to process the form
-    $scope.processForm = function() {
 
-      
-    };*/
-    console.log('h he',$scope.welcomePage);
     $scope.welcomePage = true;
     $scope.state = $state;
-    console.log('state',$scope.state,$state.current.name )
-
     $scope.startForm = function(){
       console.log('h he >>>',$scope.welcomePage);
-          $scope.welcomePage = false;
+      $scope.welcomePage = false;
     };
 
     console.log('Kiran shinde');

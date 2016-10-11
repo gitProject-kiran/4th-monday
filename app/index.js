@@ -4,6 +4,7 @@ angular.module('travel-booking', [
         'ui.router',
         'ngAnimate',
         'ui.bootstrap',
+        'ui.select',
         dataInfo
     ])
     .config(require('../routes/routes'))

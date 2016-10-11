@@ -14,7 +14,16 @@ function helloWorldController($scope) {
 
   $scope.data = 'form-location';
   $scope.welcomePage         = false;
- 
+  
+  $scope.itemArray = [
+        {id: 1, name: 'first'},
+        {id: 2, name: 'second'},
+        {id: 3, name: 'third'},
+        {id: 4, name: 'fourth'},
+        {id: 5, name: 'fifth'},
+    ];
+
+    $scope.selected = { value: $scope.itemArray[0] };
 
   $scope.open1 = function() {
     $scope.popup1.opened = true;
