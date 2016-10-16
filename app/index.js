@@ -1,4 +1,4 @@
-let dataInfo = require('../compositions/hello-world-module.js');
+let dataInfo = require('../compositions/traval-modules.js');
 angular.module('travel-booking', [
         'ngSanitize',
         'ui.router',

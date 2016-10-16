@@ -6,17 +6,7 @@ export default function stateController($scope, $state, $http) {
     $scope.formData = {};
 
     $scope.welcomePage = true;
-    $scope.state = $state;
     $scope.startForm = function(){
-      console.log('h he >>>',$scope.welcomePage);
       $scope.welcomePage = false;
     };
-
-    console.log('Kiran shinde');
-    this.data = {
-      			author   	: 'Kiran Shinde',
-      			appName  	: 'app',
-      			description	: 'description is long'
-    		};
-    	/*	$state.go('app.home');*/
 }

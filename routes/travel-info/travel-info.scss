@@ -1,23 +1,56 @@
 /* BASIC STYLINGS
 ============================================================================= */
-body                            { padding-top:20px;color:#ffffff;background-color:#222222;}
-pre                             { margin-bottom:20px; }
+body{
+ padding-top:20px;
+ color:#ffffff;
+ background-color:#222222;
+}
+pre{
+ margin-bottom:20px;
+}
 
 /* form styling */
-#form-container                { background:#2f2f2f; margin-bottom:20px;
-    border-radius:5px; }
-#form-container .page-header   { background:#151515; margin:0; padding:20px; 
-    border-top-left-radius:5px; border-top-right-radius:5px; border-bottom: 1px solid #151515; }
+#form-container{ 
+ background:#2f2f2f;
+ margin-bottom:20px;
+ border-radius:5px;
+}
+#form-container .page-header{
+ background:#151515; 
+ margin:0; 
+ padding:20px; 
+ border-top-left-radius:5px;
+ border-top-right-radius:5px;
+ border-bottom: 1px solid #151515;
+}
 
 /*welcome page*/
 .welcome{text-align:center;}
 
 /* numbered buttons */
-#status-buttons                 {  }
-#status-buttons a               { color:#FFF; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
-#status-buttons a:hover         { text-decoration:none; }
-#status-buttons span            { background:#080808; display:block; height:30px; margin:0 auto 10px; padding-top:5px; width:30px; 
-    border-radius:50%; }
+#status-buttons a{
+ color:#FFF; 
+ display:inline-block; 
+ font-size:12px; 
+ margin-right:10px; 
+ text-align:center; 
+ text-transform:uppercase;
+  }
+#status-buttons a:hover {
+ text-decoration:none; 
+ }
+#status-buttons span{
+ background:#080808; 
+ display:block; 
+ height:30px; 
+ margin:0 auto 10px; 
+ padding-top:5px; 
+ width:30px; 
+ border-radius:50%;
+ }
+ .none{
+  pointer-events: none;
+ }
 
 /* active buttons */
 #status-buttons a.active span   { background:#00BC8C; }

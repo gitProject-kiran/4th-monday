@@ -1,26 +1,19 @@
-require('./hello-world.scss');
+require('./form-info.scss');
 
 export default {
-  bindings: {
-    author: '@',
-    description :'@'
-  },
-  template: require('./hello-world.html'),
-  controller: helloWorldController
+  template: require('./form-info.html'),
+  controller: formInfoController
 };
 
-function helloWorldController($scope,$state) {
+function formInfoController($scope,$state) {
   'ngInject';
 
-  $scope.welcomePage         = false;
-  $scope.firstNameValidate   = false;
-  $scope.lastNameValidate    = false;
-  $scope.emailValidation     = false;
-  $scope.phoneValidation     = false;  
-
-  console.log('hi hello',$scope.welcomePage );
-
   $scope.formData = {};
+
+  /* validating the enter value correct and fill is not empty*/
+  function validations(validation,dataLength){
+      return validation === false && dataLength; 
+  }
 
   /*input text validation string*/
   var textOnly               = /^[A-z]+$/;
@@ -44,15 +37,21 @@ function helloWorldController($scope,$state) {
       }
   }  
 
+ 
+  /*goes to next section*/
   $scope.nextSection         = function(){
-    if($scope.formData.firstName && !$scope.firstNameValidate && !$scope.lastNameValidate && !$scope.emailValidation && !$scope.phoneValidation){
-      console.log('$scope.firstNameValidate',$scope.firstNameValidate,$scope.lastNameValidate);
+
+    /*before goes to next section firstly check all field fill or not*/
+    var fName  = validations($scope.firstNameValidate, $scope.formData.firstName);
+    var lName  = validations($scope.lastNameValidate, $scope.formData.lastName);
+    var email  = validations($scope.emailValidation, $scope.formData.email);
+    var mobile = validations($scope.phoneValidation, $scope.formData.usrtel);
+
+    var result = fName && lName && email && mobile; 
+    if(result){
       $state.go('app.location');
     }
     
   }
-
-  
- /* console.log('directive componenent');*/
 
 }
