@@ -9,12 +9,9 @@ export default {
   controller: helloWorldController
 };
 
-function helloWorldController($scope,$state) {
+function helloWorldController($scope,$state, customerInfoService) {
   'ngInject';
 
-  $scope.data           = 'form-location';
-  $scope.welcomePage    = false;
-  
   $scope.itemArray = [
         {id: 1, name: 'first'},
         {id: 2, name: 'second'},
@@ -63,6 +60,9 @@ function helloWorldController($scope,$state) {
 
  $scope.nextSection = function(){
   if($scope.startdt && $scope.returndt){
+    customerInfoService.location = $scope.selected.value.name;
+    customerInfoService.startdt  = $scope.startdt;
+    customerInfoService.returndt = $scope.returndt;
     $state.go('app.submit');
   }
  }

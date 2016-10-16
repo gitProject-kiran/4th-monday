@@ -1,19 +1,20 @@
 require('./form-verify.scss');
 
 export default {
-  bindings: {
-    author: '@',
-    description :'@'
-  },
   template: require('./form-verify.html'),
   controller: helloWorldController
 };
 
-function helloWorldController($scope) {
+function helloWorldController($scope,customerInfoService,sendMailService) {
   'ngInject';
 
-  $scope.data = 'form-verify';
-  $scope.welcomePage         = false;
-  console.log('directive form-verify');
-
+  console.log('email info',sendMailService,customerInfoService)
+  sendMailService.sendMail(customerInfoService);
+  /*$http({  
+          method: 'GET',
+          url: 'http://localhost:3000/postEmail?email='+kiranshinde42@gmail.com+''
+        }).then(function successCallback(response) {
+          console.log('response',response);
+        });
+  */
 }

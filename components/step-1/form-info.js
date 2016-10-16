@@ -5,10 +5,12 @@ export default {
   controller: formInfoController
 };
 
-function formInfoController($scope,$state) {
+function formInfoController($scope,$state, customerInfoService) {
   'ngInject';
 
   $scope.formData = {};
+
+  console.log('customerInfoService',customerInfoService);
 
   /* validating the enter value correct and fill is not empty*/
   function validations(validation,dataLength){
@@ -49,6 +51,10 @@ function formInfoController($scope,$state) {
 
     var result = fName && lName && email && mobile; 
     if(result){
+      customerInfoService.fName  = $scope.formData.firstName;
+      customerInfoService.lName  = $scope.formData.lastName;
+      customerInfoService.email  = $scope.formData.email;
+      customerInfoService.mobile = $scope.formData.usrtel;
       $state.go('app.location');
     }
     

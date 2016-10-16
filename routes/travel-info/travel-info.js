@@ -9,4 +9,6 @@ export default function stateController($scope, $state, $http) {
     $scope.startForm = function(){
       $scope.welcomePage = false;
     };
+
+     
 }
