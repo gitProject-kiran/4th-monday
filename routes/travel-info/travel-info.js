@@ -1,4 +1,4 @@
-require('./travel-info.scss');
+
 export default function stateController($scope,$state) {
     'ngInject';
 

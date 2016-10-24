@@ -36,13 +36,13 @@ function formLocationController($scope,$state, customerInfoService) {
     opened: false
   };
 
-  $scope.$watch('startdt', function(newval, oldval){
+  $scope.$watch('startdt', function(){
         if($scope.returndt < $scope.startdt) {
             $scope.returndt = '';
         };
   });
     
-  $scope.$watch('returndt', function(newval, oldval){
+  $scope.$watch('returndt', function(){
         if($scope.returndt < $scope.startdt) {
             $scope.returndt = '';
         };
@@ -54,12 +54,12 @@ function formLocationController($scope,$state, customerInfoService) {
   };
 
  $scope.nextSection = function(){
-
   if($scope.startdt && $scope.returndt){
     customerInfoService.location = $scope.selected.value.name;
     customerInfoService.startdt  = $scope.startdt;
     customerInfoService.returndt = $scope.returndt;
-      console.log('startdet enddate',customerInfoService.startdt,customerInfoService.returndt);
+
+    //goes to next section
     $state.go('app.submit');
   }
  }
