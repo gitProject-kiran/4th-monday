@@ -1,4 +1,4 @@
-function customerInfoService($http, $q) {
+function customerInfoService() {
 	var customer = {};
 		customer.fName 		= '';
 		customer.lName 		= '';

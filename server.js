@@ -8,8 +8,8 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'kiran.shinde.git@gmail.com',
-        pass: 'Jamshift@123'
+        user: 'travalBooking@gmail.com',
+        pass: 'Jamshift@7706'
     },
     logger: true, // log to console
     debug: true // include SMTP traffic in the logs
@@ -17,7 +17,7 @@ var transporter = nodemailer.createTransport({
     // default message fields
 
     // sender info
-    from: 'kiran shinde <kiran.shinde.git@gmail.com>',
+    from: 'travaler <travalBooking@gmail.com>',
     headers: {
         'X-Laziness-level': 1000 // just an example header, no need to use this
     }
@@ -45,9 +45,9 @@ var message = {
     // HTML body
     html: '<h1>Thank you</h1>'+
           '<pre>'+req.query.fName +' '+ req.query.lName +'('+ req.query.mobile +')'+
-          'will depart for '+ req.query.location +' on '+ req.query.startdt +
-          'and return on '+  req.query.returndt +
-          '<h3>Your Booking is confirmed</h3>'
+          ' will depart for '+ req.query.location +' on '+ req.query.startdt +
+          ' and return on '+  req.query.returndt +
+          ' <h3>Your Booking is confirmed</h3>'
 };
 
 
@@ -62,6 +62,6 @@ var message = {
 	});
 });
 
-app.listen(3000,function(){
-	console.log('app listening the port 3000');
+app.listen(5000,function(){
+	console.log('app listening the port 5000');
 });

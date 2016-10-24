@@ -1,6 +1,14 @@
 <div class="text-center">
+
     <span class="glyphicon glyphicon-heart"></span>
-    <h3>Thanks For Your Money!</h3>
-    
-    <button type="submit" class="btn btn-danger">Submit</button>
+
+    <div>
+        <span>{{customerInfo.fName}}</span>
+        <span>{{customerInfo.lName}}</span>
+        <span>({{customerInfo.mobile}}) will depart for {{customerInfo.location}}
+        on {{deportDate}} and return on {{returnDate}}</span>
+    </div>
+    <h3>Thank You!</h3>
+
+    <button type="submit" class="btn btn-danger" ng-click="submit()">Submit</button>
 </div>

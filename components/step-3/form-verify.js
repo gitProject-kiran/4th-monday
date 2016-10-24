@@ -2,19 +2,27 @@ require('./form-verify.scss');
 
 export default {
   template: require('./form-verify.html'),
-  controller: helloWorldController
+  controller: formVerifyController
 };
 
-function helloWorldController($scope,customerInfoService,sendMailService) {
+function formVerifyController($scope,$state,customerInfoService,sendMailService) {
   'ngInject';
 
-  console.log('email info',sendMailService,customerInfoService)
-  sendMailService.sendMail(customerInfoService);
-  /*$http({  
-          method: 'GET',
-          url: 'http://localhost:3000/postEmail?email='+kiranshinde42@gmail.com+''
-        }).then(function successCallback(response) {
-          console.log('response',response);
-        });
-  */
+    $scope.customerInfo = customerInfoService;
+    $scope.returnDate = customerInfoService.returndt.toString().split('00:00:00')[0];
+    $scope.deportDate = customerInfoService.startdt.toString().split('00:00:00')[0];
+
+    console.log('customrInfo');
+     
+  /*submit the form*/
+  $scope.submit = function(){
+    sendMailService.sendMail(customerInfoService);
+
+    alert('Thanks Please check your mail for confirmation');
+    console.log('Thanks Please check your mail for confirmation');
+
+    /*goes to initial point*/
+    $state.go('app.home');
+
+  }
 }

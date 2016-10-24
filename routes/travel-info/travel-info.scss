@@ -1,111 +1,190 @@
 /* BASIC STYLINGS
 ============================================================================= */
-body{
- padding-top:20px;
- color:#ffffff;
- background-color:#222222;
-}
-pre{
- margin-bottom:20px;
-}
-
-/* form styling */
-#form-container{ 
- background:#2f2f2f;
- margin-bottom:20px;
- border-radius:5px;
-}
-#form-container .page-header{
- background:#151515; 
- margin:0; 
- padding:20px; 
- border-top-left-radius:5px;
- border-top-right-radius:5px;
- border-bottom: 1px solid #151515;
-}
-
-/*welcome page*/
-.welcome{text-align:center;}
-
-/* numbered buttons */
-#status-buttons a{
- color:#FFF; 
- display:inline-block; 
- font-size:12px; 
- margin-right:10px; 
- text-align:center; 
- text-transform:uppercase;
+  * {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
-#status-buttons a:hover {
- text-decoration:none; 
- }
-#status-buttons span{
- background:#080808; 
- display:block; 
- height:30px; 
- margin:0 auto 10px; 
- padding-top:5px; 
- width:30px; 
- border-radius:50%;
- }
- .none{
-  pointer-events: none;
- }
+  body {
+    padding-top: 20px;
+    color: #ffffff;
+    background-color: #222222;
+  }
 
-/* active buttons */
-#status-buttons a.active span   { background:#00BC8C; }
+  pre {
+    margin-bottom: 20px;
+  }
 
-/*text display in center*/
-input{text-align:center;}
+  /* form styling */
+  #form-container {
+    background: #2f2f2f;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
 
-/* ANIMATION STYLINGS
-============================================================================= */
-#signup-form            { position:relative; min-height:300px; padding:30px;}
+  #form-container .page-header {
+    background: #151515;
+    margin: 0;
+    padding: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid #151515;
+  }
 
-/* basic styling for entering and leaving */
-/* left and right added to ensure full width */
-.form-views.ng-enter,
-.form-views.ng-leave      { position:absolute; left:30px; right:30px;overflow:hidden;
-    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
-}
-    
-/* enter animation */
-.form-views.ng-enter            { 
-    -webkit-animation:slideInRight 0.5s both ease;
-	-moz-animation:slideInRight 0.5s both ease;
-	animation:slideInRight 0.5s both ease; 
-}
+  /*welcome page*/
+  .welcome {
+    text-align: center;
+  }
 
-/* leave animation */
-.form-views.ng-leave            { 
-    -webkit-animation:slideOutLeft 0.5s both ease;
-	-moz-animation:slideOutLeft 0.5s both ease;
-	animation:slideOutLeft 0.5s both ease;   
-}
+  .container-header {
+    display: flex; /* or inline-flex */
+    flex-wrap:  wrap;
+    align-content: center;
+    justify-content: center;
 
-/* ANIMATIONS
-============================================================================= */
-/* slide out to the left */
-@keyframes slideOutLeft {
-	to 		{ transform: translateX(-200%); }
-}
-@-moz-keyframes slideOutLeft {	
-	to 		{ -moz-transform: translateX(-200%); }
-}
-@-webkit-keyframes slideOutLeft {
-	to 		{ -webkit-transform: translateX(-200%); }
-}
+  }
+  .container-item{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    margin: 10px;
+    border-radius: 15px;
+    pointer-events: none;
+    font-size: 150%;
+    background-color: #2F2F2F;
+  }
+  .container-items{
+    background-color: #4CAF50;
+  }
 
-/* slide in from the right */
-@keyframes slideInRight {
-	from 	{ transform:translateX(200%); }
-	to 		{ transform: translateX(0); }
-}
-@-moz-keyframes slideInRight {
-	from 	{ -moz-transform:translateX(200%); }
-	to 		{ -moz-transform: translateX(0); }
-}
-@-webkit-keyframes slideInRight {
-	from 	{ -webkit-transform:translateX(200%); }
-	to 		{ -webkit-transform: translateX(0); }
-}
+  .header-tab {
+    width:20px;
+    height: 20px;
+    background-color: #00BC8C;
+  }
+
+  /* numbered buttons */
+  #status-buttons a {
+    color: #FFF;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 10px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  #status-buttons a:hover {
+    text-decoration: none;
+  }
+
+  #status-buttons span {
+    background: #080808;
+    display: block;
+    height: 30px;
+    margin: 0 auto 10px;
+    padding-top: 5px;
+    width: 30px;
+    border-radius: 50%;
+  }
+
+  .none {
+    pointer-events: none;
+  }
+
+  /* active buttons */
+  #status-buttons a.active span {
+    background: #00BC8C;
+  }
+
+  /*text display in center*/
+  input {
+    text-align: center;
+  }
+
+  /* ANIMATION STYLINGS
+  ============================================================================= */
+  #signup-form {
+    position: relative;
+    min-height: 300px;
+    padding: 30px;
+  }
+
+  /* basic styling for entering and leaving */
+  /* left and right added to ensure full width */
+  .form-views.ng-enter,
+  .form-views.ng-leave {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    overflow: hidden;
+    transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+  }
+
+  /* enter animation */
+  .form-views.ng-enter {
+    -webkit-animation: slideInRight 0.5s both ease;
+    -moz-animation: slideInRight 0.5s both ease;
+    animation: slideInRight 0.5s both ease;
+  }
+
+  /* leave animation */
+  .form-views.ng-leave {
+    -webkit-animation: slideOutLeft 0.5s both ease;
+    -moz-animation: slideOutLeft 0.5s both ease;
+    animation: slideOutLeft 0.5s both ease;
+  }
+
+  /* ANIMATIONS
+  ============================================================================= */
+  /* slide out to the left */
+  @keyframes slideOutLeft {
+    to {
+      transform: translateX(-200%);
+    }
+  }
+
+  @-moz-keyframes slideOutLeft {
+    to {
+      -moz-transform: translateX(-200%);
+    }
+  }
+
+  @-webkit-keyframes slideOutLeft {
+    to {
+      -webkit-transform: translateX(-200%);
+    }
+  }
+
+  /* slide in from the right */
+  @keyframes slideInRight {
+    from {
+      transform: translateX(200%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @-moz-keyframes slideInRight {
+    from {
+      -moz-transform: translateX(200%);
+    }
+    to {
+      -moz-transform: translateX(0);
+    }
+  }
+
+  @-webkit-keyframes slideInRight {
+    from {
+      -webkit-transform: translateX(200%);
+    }
+    to {
+      -webkit-transform: translateX(0);
+    }
+  }
+

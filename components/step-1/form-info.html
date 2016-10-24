@@ -1,30 +1,35 @@
+<!--first name-->
 <div class="form-group">
     <input type="text" class="form-control" name="firstName" ng-model="formData.firstName" 
     placeholder="First Name" ng-keyup="textValidate('firstNameValidate','firstName')" autocomplete="off" required>
     <span ng-if="firstNameValidate" class="invalid-text">Please enter the valid name</span>
 </div>
 
+<!--last name-->
 <div class="form-group">
     <input type="text" class="form-control" name="lastName" 
-           ng-model="formData.lastName" placeholder="lastName" 
+           ng-model="formData.lastName" placeholder="Last Name"
            ng-keyup="textValidate('lastNameValidate','lastName')" 
            autocomplete="off" required>
     <span ng-if="lastNameValidate" class="invalid-text">
     Please enter the valid name</span>
 </div>
 
+<!--email id-->
 <div class="form-group">
     <input type="text" class="form-control" name="email" ng-model="formData.email" 
     placeholder="Email" ng-keyup="email()" autocapitalize="off" autocomplete="off" required>
     <span ng-if="emailValidation" class="invalid-text">Please enter the valid email</span>
 </div>
 
+<!--mobile number-->
 <div class="form-group">
     <input type="tel" class="form-control" name="usrtel" ng-model="formData.usrtel" 
     placeholder="Phone" maxLength="10" ng-keyup="mobile()" autocomplete="off" required>
     <span ng-if="phoneValidation" class="invalid-text">Please enter 10 digit mobile number</span>
 </div>
 
+<!--next button-->
  <div class="form-group row text-center">
     <button type="submit" class="btn btn-info align-center" ng-click="nextSection()">
      Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span></button>

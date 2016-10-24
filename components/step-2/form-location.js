@@ -1,23 +1,18 @@
 require('./form-location.scss');
 
 export default {
-  bindings: {
-    author: '@',
-    description :'@'
-  },
   template: require('./form-location.html'),
-  controller: helloWorldController
+  controller: formLocationController
 };
 
-function helloWorldController($scope,$state, customerInfoService) {
+function formLocationController($scope,$state, customerInfoService) {
   'ngInject';
 
   $scope.itemArray = [
-        {id: 1, name: 'first'},
-        {id: 2, name: 'second'},
-        {id: 3, name: 'third'},
-        {id: 4, name: 'fourth'},
-        {id: 5, name: 'fifth'},
+        {id: 1, name: 'Boston'},
+        {id: 2, name: 'New York'},
+        {id: 3, name: 'Chicago'},
+        {id: 4, name: 'San Francisco'}
     ];
 
   $scope.selected = { value: $scope.itemArray[0] };
@@ -32,7 +27,7 @@ function helloWorldController($scope,$state, customerInfoService) {
 
 
   $scope.formats =  'dd.MM.yyyy';
- 
+
   $scope.popup1 = {
     opened: false
   };
@@ -59,10 +54,12 @@ function helloWorldController($scope,$state, customerInfoService) {
   };
 
  $scope.nextSection = function(){
+
   if($scope.startdt && $scope.returndt){
     customerInfoService.location = $scope.selected.value.name;
     customerInfoService.startdt  = $scope.startdt;
     customerInfoService.returndt = $scope.returndt;
+      console.log('startdet enddate',customerInfoService.startdt,customerInfoService.returndt);
     $state.go('app.submit');
   }
  }

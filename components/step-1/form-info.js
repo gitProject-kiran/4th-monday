@@ -21,13 +21,13 @@ function formInfoController($scope,$state, customerInfoService) {
   var textOnly               = /^[A-z]+$/;
   $scope.textValidate        = function(inputField,inputText){
           $scope[inputField] = !textOnly.test($scope.formData[inputText]);
-  }
+  };
 
   /*email validation string only*/
   var emailOnly             = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
   $scope.email              = function(){
      $scope.emailValidation =  !emailOnly.test($scope.formData.email);
-  }
+  };
 
   /*mobile number verification*/
   var mobileOnly             = /^[0-9]+$/;
@@ -37,7 +37,7 @@ function formInfoController($scope,$state, customerInfoService) {
       }else{
         $scope.phoneValidation = true;
       }
-  }  
+  };
 
  
   /*goes to next section*/
