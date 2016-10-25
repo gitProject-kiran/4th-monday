@@ -12,6 +12,8 @@
     padding-top: 20px;
     color: #ffffff;
     background-color: #222222;
+    background-image: url("http://www.hutui6.com/data/out/200/68563005-travel-wallpapers.jpg");
+    background-repeat:no-repeat ;
   }
 
   pre {
@@ -25,6 +27,13 @@
     border-radius: 5px;
   }
 
+  .social{
+    color:wheat;
+  }
+  .middle-line{
+    padding: 5px;
+  }
+
   #form-container .page-header {
     background: #151515;
     margin: 0;
@@ -32,6 +41,7 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: 1px solid #151515;
+    background-image: url("https://www.phyramid.com/images/blog/making-phyramid-coms-procedurally-rendered-3d-header/header-background-indexed.png");
   }
 
   /*welcome page*/
@@ -67,29 +77,6 @@
   }
 
   /* numbered buttons */
-  #status-buttons a {
-    color: #FFF;
-    display: inline-block;
-    font-size: 12px;
-    margin-right: 10px;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  #status-buttons a:hover {
-    text-decoration: none;
-  }
-
-  #status-buttons span {
-    background: #080808;
-    display: block;
-    height: 30px;
-    margin: 0 auto 10px;
-    padding-top: 5px;
-    width: 30px;
-    border-radius: 50%;
-  }
-
   .none {
     pointer-events: none;
   }
@@ -109,7 +96,7 @@
   #signup-form {
     position: relative;
     min-height: 300px;
-    padding: 30px;
+    padding: 20px;
   }
 
   /* basic styling for entering and leaving */

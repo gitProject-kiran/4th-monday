@@ -1,4 +1,5 @@
 <div class="form-group" class="align-center" >
+    <span>Location</span>
    <ui-select ng-model="selected.value">
     <ui-select-match>
         <span class="align-center" ng-bind="$select.selected.name"></span>
@@ -9,7 +10,9 @@
 </ui-select>
 </div>
 
+<span>Date Report</span>
 <p class="input-group">
+
   <input type="text" class="form-control" placeholder="Date Deport"
           value="{{startdt|date:'fullDate'}}" disabled/>
       <datepicker uib-datepicker-popup="{{format}}" ng-model="startdt" 
@@ -23,6 +26,7 @@
   </span>
 </p>
 
+<span>Date Return</span>
 <p class="input-group">
   <input type="text" class="form-control" placeholder="Date Return"
          value="{{returndt|date:'fullDate'}}" disabled/>

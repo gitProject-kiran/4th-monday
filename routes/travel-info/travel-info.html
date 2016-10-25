@@ -16,12 +16,39 @@
 
       <!-- use ng-click to catch the form submission and use our Angular function -->
       <form id="signup-form">
+
           <!-- our nested state views will be injected here -->
           <div class="form-views" ui-view></div>
+
+          <!--welcome page-->
           <div class="form-views text-center" ng-show="welcomePage">
+
             <h2>Welcome to travel-trip!</h2>
-            <button type="submit" ui-sref=".home" class="btn btn-lg btn-primary"
-            ng-click="startForm()">Start</button>
+            <button type="submit" ui-sref=".home" class="btn btn-md btn-primary" ng-click="startForm()">Start</button>
+
+             <div class="row social"> <h5>Feature Enhancement</h5> </div>
+
+              <!--Sign up button-->
+              <div class="row">
+                  <a class="btn btn-social btn-vimeo">
+                      <span class="fa fa-twitter"></span>
+                      Sign up with travel-trip
+                  </a>
+              </div>
+
+              <div class="middle-line"> </div>
+
+              <!--social networking site buttons of facebook and gmail-->
+              <div class="row">
+                  <a class="btn btn-social btn-facebook">
+                      <span class="fa fa-twitter"></span>
+                      Sign in with facebook
+                  </a>
+                  <a class="btn btn-social btn-google">
+                      <span class="fa fa-twitter"></span>
+                      Sign in with google
+                  </a>
+              </div>
           </div>
       </form>
   

@@ -7,3 +7,4 @@ require('angular-animate');
 require('angular-ui-bootstrap');
 require('angular-ui-select');
 require('ng-focus-if');
+require('lodash');

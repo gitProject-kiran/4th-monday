@@ -1,6 +1,4 @@
-
 var express = require('express');
-var router = express.Router();
 var app = express();
 var nodemailer = require('nodemailer');
 
@@ -14,8 +12,6 @@ var transporter = nodemailer.createTransport({
     logger: true, // log to console
     debug: true // include SMTP traffic in the logs
 }, {
-    // default message fields
-
     // sender info
     from: 'travaler <travalBooking@gmail.com>',
     headers: {
@@ -24,44 +20,40 @@ var transporter = nodemailer.createTransport({
 });
 
 
-app.get('/postEmail',function(req,res){
+app.get('/postEmail', function (req, res) {
 
-res.header("Access-Control-Allow-Origin", "*");
-res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
- 	// Message object
-var message = {
+    // Message object
+    var message = {
 
+        // Comma separated list of recipients
+        to: '"' + req.query.fName + '' + req.query.lName + '"<' + req.query.email + '>',
 
+        // Subject of the message
+        subject: 'Booking Confirmation ✔', //
 
-    // Comma separated list of recipients
-    to: '"'+req.query.fName +''+ req.query.lName+'"<'+ req.query.email +'>',
-
- /*   to: '"kkkk ssss" <'+ req.query.email +'>',*/
-
-    // Subject of the message
-    subject: 'Booking Confirmation ✔', //
-
-    // HTML body
-    html: '<h1>Thank you</h1>'+
-          '<pre>'+req.query.fName +' '+ req.query.lName +'('+ req.query.mobile +')'+
-          ' will depart for '+ req.query.location +' on '+ req.query.startdt +
-          ' and return on '+  req.query.returndt +
-          ' <h3>Your Booking is confirmed</h3>'
-};
+        // HTML body
+        html: '<h1>Thank you</h1>' +
+              '<pre>' + req.query.fName + ' ' + req.query.lName + '(' + req.query.mobile + ')' +
+              ' will depart for ' + req.query.location + ' on ' + req.query.startdt +
+              ' and return on ' + req.query.returndt +
+              ' <h3>Your Booking is confirmed</h3>'
+    };
 
 
-	transporter.sendMail(message, function (error, info) {
-    if (error) {
-         res.send('Message sent successfully!',req.query);
-        return;
-    }
-    res.send(req.query);
-    console.log('Message sent successfully!');
-  
-	});
+    transporter.sendMail(message, function (error, info) {
+        if (error) {
+            res.send('Message sent successfully!', req.query);
+            return;
+        }
+        res.send(req.query);
+        console.log('Message sent successfully!');
+
+    });
 });
 
-app.listen(5000,function(){
-	console.log('app listening the port 5000');
+app.listen(5000, function () {
+    console.log('app listening the port 5000');
 });

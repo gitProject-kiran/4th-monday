@@ -10,8 +10,6 @@ function formInfoController($scope,$state, customerInfoService) {
 
   $scope.formData = {};
 
-  console.log('customerInfoService',customerInfoService);
-
   /* validating the enter value correct and fill is not empty*/
   function validations(validation,dataLength){
       return validation === false && dataLength; 
