@@ -1,59 +1,66 @@
 <div class="row">
-<div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-8 col-sm-offset-2">
 
-  <div id="form-container">
-  
-      <div class="page-header text-center" >
-          <h2>Let's Start The Journey</h2>
+        <div id="form-container">
 
-          <!-- add the active class if the state matches our ui-sref -->
-          <div class="container-header">
-              <span class="container-item" ui-sref-active="container-items" ui-sref=".home">1</span>
-              <span class="container-item" ui-sref-active="container-items" ui-sref=".location">2</span>
-              <span class="container-item" ui-sref-active="container-items" ui-sref=".submit">3</span>
-          </div>
-      </div>
+            <div class="page-header text-center">
+                <h2>Let's Start The Journey</h2>
 
-      <!-- use ng-click to catch the form submission and use our Angular function -->
-      <form id="signup-form">
+                <!-- add the active class if the state matches our ui-sref -->
+                <div class="container-header">
+                    <span class="container-item" ui-sref-active="container-items" ui-sref=".home">1</span>
+                    <span class="container-item" ui-sref-active="container-items" ui-sref=".location">2</span>
+                    <span class="container-item" ui-sref-active="container-items" ui-sref=".submit">3</span>
+                </div>
+            </div>
 
-          <!-- our nested state views will be injected here -->
-          <div class="form-views" ui-view></div>
+            <!-- use ng-click to catch the form submission and use our Angular function -->
+            <form id="signup-form">
 
-          <!--welcome page-->
-          <div class="form-views text-center" ng-show="welcomePage">
+                <!-- our nested state views will be injected here -->
+                <div class="form-views" ui-view></div>
 
-            <h2>Welcome to travel-trip!</h2>
-            <button type="submit" ui-sref=".home" class="btn btn-md btn-primary" ng-click="startForm()">Start</button>
+                <!--welcome page-->
+                <div class="form-views text-center" ng-show="welcomePage">
 
-             <div class="row social"> <h5>Feature Enhancement</h5> </div>
+                    <h2>Welcome to travel-trip!</h2>
+                    <button type="submit" ui-sref=".home" class="btn btn-md btn-primary" ng-click="startForm()">Login
+                    </button>
 
-              <!--Sign up button-->
-              <div class="row">
-                  <a class="btn btn-social btn-vimeo">
-                      <span class="fa fa-twitter"></span>
-                      Sign up with travel-trip
-                  </a>
-              </div>
+                    <hr>
 
-              <div class="middle-line"> </div>
+                    <div class="row social"><h5>Feature Enhancement</h5></div>
 
-              <!--social networking site buttons of facebook and gmail-->
-              <div class="row">
-                  <a class="btn btn-social btn-facebook">
-                      <span class="fa fa-twitter"></span>
-                      Sign in with facebook
-                  </a>
-                  <a class="btn btn-social btn-google">
-                      <span class="fa fa-twitter"></span>
-                      Sign in with google
-                  </a>
-              </div>
-          </div>
-      </form>
-  
-  </div>
-</div>
+                    <!--Sign up button-->
+                    <div class="row">
+                        <a class="btn btn-social btn-vimeo">
+                            <span class="fa fa-twitter"></span>
+                            Sign up with travel-trip
+                        </a>
+                    </div>
+
+                    <!--social networking site buttons of facebook and gmail-->
+                    <div class="row">
+                        <div class="col-lg-4 col-lg-offset-2 col-sm-5 col-sm-offset-2">
+                            <a class="btn btn-social btn-facebook">
+                                <span class="fa fa-facebook"></span>
+                                Sign in with facebook
+                            </a>
+                        </div>
+
+
+                        <div class="col-lg-4 col-sm-5 ">
+                            <a class="btn btn-social btn-google">
+                                <span class="fa fa-google"></span>
+                                Sign in with google
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
 
 </div>
 

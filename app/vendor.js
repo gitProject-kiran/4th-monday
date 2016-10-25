@@ -8,3 +8,4 @@ require('angular-ui-bootstrap');
 require('angular-ui-select');
 require('ng-focus-if');
 require('lodash');
+require('components-font-awesome');
