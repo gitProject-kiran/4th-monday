@@ -1,5 +1,6 @@
 /**
- * Created by M036 on 25-10-2016.
+ * Created by Kiran on 25-10-2016.
+ * taking all city information and put into the customer data
  */
 function customerDataService() {
     var customerData = {};

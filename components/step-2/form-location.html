@@ -1,3 +1,5 @@
+
+<!--search the city-->
 <div class="form-group" class="align-center" >
     <span>Location</span>
    <ui-select ng-model="selected.value">
@@ -10,9 +12,9 @@
 </ui-select>
 </div>
 
+<!--select the date report -->
 <span>Date Report</span>
 <p class="input-group">
-
   <input type="text" class="form-control" placeholder="Date Deport"
           value="{{startdt|date:'fullDate'}}" disabled/>
       <datepicker uib-datepicker-popup="{{format}}" ng-model="startdt" 
@@ -26,6 +28,7 @@
   </span>
 </p>
 
+<!-- select the data return -->
 <span>Date Return</span>
 <p class="input-group">
   <input type="text" class="form-control" placeholder="Date Return"
@@ -40,8 +43,11 @@
     </button>
   </span>
 </p>
+
+<!--validation msg if data is not valid -->
 <span ng-if="returnDate" style="color: red;">Please enter correct date</span>
 
+<!--next section button-->
 <div class="form-group row">
 <div class="col-xs-6 col-xs-offset-3">
     <a ng-click="nextSection()" class="btn btn-block btn-info">

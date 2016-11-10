@@ -1,5 +1,7 @@
-require('./form-verify.scss');
-
+/**
+ * Created by Kiran
+ * taking the data report, date return and location
+ */
 export default {
   template: require('./form-verify.html'),
   controller: formVerifyController
@@ -14,6 +16,8 @@ function formVerifyController($scope,$state,customerInfoService,sendMailService)
 
   /*submit the form*/
   $scope.submit = function(){
+
+    //sending the data to mail service
     sendMailService.sendMail(customerInfoService);
 
     alert('Thanks Please check your mail for confirmation');

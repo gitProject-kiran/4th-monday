@@ -1,5 +1,8 @@
+/**
+ * Created by Kiran
+ * Personal information page
+ */
 require('./form-info.scss');
-
 export default {
     template: require('./form-info.html'),
     controller: formInfoController

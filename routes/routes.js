@@ -1,5 +1,5 @@
 /*require('./travel-info/travel-info.scss');*/
-var stateController = require('./travel-info/travel-info.js')
+var stateController = require('./travel-info/travel-info.js');
 export default function ($stateProvider, $urlRouterProvider) {
     'ngInject';
     $urlRouterProvider.otherwise('/');

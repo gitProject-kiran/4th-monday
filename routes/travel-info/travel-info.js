@@ -13,8 +13,10 @@ export default function stateController($scope,customerDataService) {
       $scope.welcomePage = false;
     };
 
+    //store the employee information in gama data object
     $scope.gameData = {};
 
+    //taking the city information in json file
     function load() {
         var req = require.context('!json!../', true, /data\.json$/);
         _.forEach(req.keys(), function(file) {
@@ -22,6 +24,8 @@ export default function stateController($scope,customerDataService) {
         });
         customerDataService.customerData = $scope.gameData;
     }
+
+    //initial calling
     load();
 
     //click on social icons

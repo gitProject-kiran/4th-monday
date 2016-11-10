@@ -1,5 +1,9 @@
-require('./form-location.scss');
+/**
+ * Created by Kiran
+ * taking the data report, date return and location
+ */
 
+require('./form-location.scss');
 export default {
     template: require('./form-location.html'),
     controller: formLocationController
@@ -39,12 +43,14 @@ function formLocationController($scope, $state, customerInfoService, customerDat
         opened: false
     };
 
+    //date validation if return date must be greater of equal to report date
     $scope.$watch('startdt', function () {
         if ($scope.returndt < $scope.startdt) {
             $scope.returndt = '';
         };
     });
 
+    //date validation if return date must be greater of equal to report date
     $scope.$watch('returndt', function () {
         if ($scope.returndt < $scope.startdt) {
             $scope.returndt = '';
@@ -59,6 +65,7 @@ function formLocationController($scope, $state, customerInfoService, customerDat
         minDate: new Date()
     };
 
+    //goes to next section
     $scope.nextSection = function () {
         if ($scope.startdt && $scope.returndt) {
             customerInfoService.location = $scope.selected.value.name;
