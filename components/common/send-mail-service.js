@@ -3,8 +3,8 @@ function sendMailService($http, $q) {
 
 		/* call to mailer API */
         $http({  
-          method: 'GET',
-          url: 'http://localhost:5000/postEmail?email='+emailContain.email+
+          method: 'POST',
+          url: 'http://192.168.10.82:5000/postEmail?email='+emailContain.email+
           		'&fName='+emailContain.fName+
           		'&lName='+emailContain.lName+
           		'&location='+emailContain.location+

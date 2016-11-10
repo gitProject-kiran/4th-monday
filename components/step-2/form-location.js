@@ -9,6 +9,7 @@ function formLocationController($scope, $state, customerInfoService, customerDat
     'ngInject';
 
     $scope.itemArray = [];
+    $scope.returnDate = false;
     for (var i = 1; customerDataService.customerData[i] != null; i++) {
         $scope.itemArray.push({
             id: customerDataService.customerData[i].code,
@@ -47,7 +48,10 @@ function formLocationController($scope, $state, customerInfoService, customerDat
     $scope.$watch('returndt', function () {
         if ($scope.returndt < $scope.startdt) {
             $scope.returndt = '';
-        };
+            $scope.returnDate = true;
+        }else{
+            $scope.returnDate = false;
+        }
     });
 
     $scope.dateOptions = {

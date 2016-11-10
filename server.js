@@ -20,7 +20,7 @@ var transporter = nodemailer.createTransport({
 });
 
 
-app.get('/postEmail', function (req, res) {
+app.post('/postEmail', function (req, res) {
 
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
